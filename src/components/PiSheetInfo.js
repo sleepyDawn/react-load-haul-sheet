@@ -18,13 +18,20 @@ export const PiSheetInfo = (props) => {
     const plant = props.piSheetInfos.plant
     const processOrder = props.piSheetInfos.processOrder
     const productionDate= props.piSheetInfos.productionDate
+    const [currDate, setCurrDate] = useState(productionDate);
 
     
     
 
     const onDateChange = (e) => {
-       
-            const dateMomentObj = moment(e.target.value);
+
+        const regex = /^[0-9]{2}[\.]{1}[0-9]{2}[\.]{1}[0-9]{4}$/g;
+        // console.log("checking date : ", e.target.value);
+        // console.log("testing regex: ", regex.test(e.target.value));
+        setCurrDate(e.target.value);
+        if(regex.test(e.target.value)){
+            //do something
+            const dateMomentObj = moment(e.target.value, "DD.MM.YYYY");
             console.log("checking date : ", e.target.value, dateMomentObj);
             
           props.setProductionDateVal(dateMomentObj.format("DD.MM.YYYY"));
@@ -38,6 +45,11 @@ export const PiSheetInfo = (props) => {
               props.editLoadingHaulingInfo(loadingHaulingInfo.id, {productionDate: dateMomentObj.format("DD.MM.YYYY")})
           });
 
+       }
+       
+
+       
+            
         
       };
     
@@ -121,10 +133,11 @@ export const PiSheetInfo = (props) => {
                     </td>
                     <td>
                         <Form.Control
-                            type="date"
+                            type="text"
+                            id="dateFieldHtml5"
                             size="lg"
-                            placeholder="DD.MM.YYY"
-                            value={productionDate}
+                            placeholder="DD.MM.YYYY"
+                            value={currDate}
                             onChange={onDateChange}
                         />
                     </td>
