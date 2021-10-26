@@ -101,7 +101,7 @@ export const PiSheetInfo = (props) => {
 
     return (
         <Container className="mt-5">
-            <Table striped bordered hover>
+            <Table striped bordered hover size="sm" responsive="sm">
                 <thead>
                     <tr>
                     <th>Plant</th>

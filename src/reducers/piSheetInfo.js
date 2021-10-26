@@ -1,3 +1,5 @@
+// import moment from "moment";
+
 import moment from "moment";
 
 // PiSheetInfos Reducer
@@ -5,7 +7,7 @@ import moment from "moment";
 const piSheetInfoDefaultState = {
   plant : 2012, 
   processOrder : 70003962, 
-  productionDate : '24.10.2021',
+  productionDate : moment().format("DD.MM.YYYY"),
   shift: 'SF1A'
 };
 
