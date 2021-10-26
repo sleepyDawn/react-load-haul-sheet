@@ -16,13 +16,28 @@ const downloadExcel = ({ piSheetInfos,drillingInfos,loadingInfos,loadingHaulingI
 
       // First updating location, excavatorOpertator also when exvator is being updated
       
-      // const resourceExcavators = loadingHaulingInfos.map(loadingHaulingInfo => loadingHaulingInfo.resourceExcavator)
-      // resourceExcavators.forEach(currVal => {
-      //   const loadingInfo = loadingInfos.filter(loadingInfo => loadingInfo.resourceExcavator === currVal)[0]
-      //   const {location, excavatorOperator } = loadingInfo;
-      //   loadingHaulingInfos = { ...loadingHaulingInfos, }
-      //   props.editLoadingHaulingInfo(id, { ...updateObj, resourceExcavator: currVal, location, excavatorOperator })
-      // })
+  // // updating resourcexcavator details according to excavator info in LoadingHauling info details
+  // const updateExcavatorDetailInLoadinHaulingList = () => {
+  //   const resourceExcavatorDetails = props.loadingInfos.map(loadingInfo => {
+  //     const {resourceExcavator, location, excavatorOperator, ...others} =loadingInfo;
+  
+  //     return {resourceExcavator, location, excavatorOperator};
+  //   })
+  
+  //   console.log("checking redetails: ", resourceExcavatorDetails);
+  
+  //   const loadingHaulingInfos = props.loadingHaulingInfos
+  //   loadingHaulingInfos.forEach(loadingHaulingInfo => {
+  //     resourceExcavatorDetails.forEach(detail => {
+  //       if(detail.resourceExcavator === loadingHaulingInfo.resourceExcavator){
+  //         props.editLoadingHaulingInfo(loadingHaulingInfo.id, { location: detail.location, excavatorOperator : detail.excavatorOperator})
+  //       }
+  //     })
+  //   })
+  // }
+      
+      
+     
 
       
       

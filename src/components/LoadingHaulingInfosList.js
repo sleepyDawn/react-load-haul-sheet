@@ -41,8 +41,11 @@ export const LoadingHaulingInfosList = (props) => {
     // updating location, excavatorOpertator also when exvator is being updated
     
     const loadingInfo = props.loadingInfos.filter(loadingInfo => loadingInfo.resourceExcavator === currVal)[0]
-    const {location, excavatorOperator } = loadingInfo;
-    props.editLoadingHaulingInfo(id, { ...updateObj, resourceExcavator: currVal, location, excavatorOperator })
+    if(loadingInfo){
+      const {location, excavatorOperator } = loadingInfo;
+      props.editLoadingHaulingInfo(id, { ...updateObj, resourceExcavator: currVal, location, excavatorOperator });
+    }
+    
     
   
   }
