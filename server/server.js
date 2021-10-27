@@ -12,8 +12,9 @@ app.get("*", (req, res) => {
 });
 
 setInterval(() => {
-  http.get("https://firebase-load-haul-sheet.herokuapp.com/")
-}, 300000)
+  console.log("checking pinging");
+  http.get("http://firebase-load-haul-sheet.herokuapp.com/")
+}, 100000)
 
 
 
