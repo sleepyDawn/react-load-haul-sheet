@@ -36,9 +36,15 @@ export const LoadingInfosList = (props) => {
   }
 
   const onResourceExcavatorChange = (e) => {
-    const {id, updateObj, currVal} = getIdAndUpdatesObj(e, 'resourceExcavator');
-    // console.log(id, updateObj, currVal);
-    props.editLoadingInfo(id, { ...updateObj, resourceExcavator: currVal })
+
+    // Checking if choosen excavator already exist in props.loadinInfos, if it is it will not be added to list
+    if(!props.loadingInfos.filter(info => info.resourceExcavator === e.target.value).length){
+      const {id, updateObj, currVal} = getIdAndUpdatesObj(e, 'resourceExcavator');
+      // console.log(id, updateObj, currVal);
+      props.editLoadingInfo(id, { ...updateObj, resourceExcavator: currVal })
+    }
+
+    
   
   }
 

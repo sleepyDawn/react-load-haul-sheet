@@ -1,10 +1,11 @@
 // LoadingHaulingInfos Reducer
+import moment from "moment";
 import { v4 as uuidv4 } from "uuid";
 
 const loadingHaulingInfosReducerDefaultState = [
     {   
         id: uuidv4(),
-        productionDate: '24.10.2021',
+        productionDate: moment().format("DD.MM.YYYY"),
         shift: 'SF1A',
         lineNo: 1,
         seamNo: '6.22',
@@ -19,7 +20,7 @@ const loadingHaulingInfosReducerDefaultState = [
     },
     {   
         id: uuidv4(),
-        productionDate: '24.10.2021',
+        productionDate: moment().format("DD.MM.YYYY"),
         shift: 'SF1A',
         lineNo: 2,
         seamNo: '9.44',

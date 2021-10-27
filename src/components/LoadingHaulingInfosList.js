@@ -51,10 +51,15 @@ export const LoadingHaulingInfosList = (props) => {
   }
 
   const onResourceDumperChange = (e) => {
+
+    // Checking if choosen dumper already exist in props.loadinHaulingInfos, if it is, it will not be added to list
+    if(!props.loadingHaulingInfos.filter(info => info.resourceDumper === e.target.value).length){
     const {id, updateObj, currVal} = getIdAndUpdatesObj(e, 'resourceDumper');
     // console.log(id, updateObj, currVal);
     
     props.editLoadingHaulingInfo(id, { ...updateObj, resourceDumper: currVal })
+
+    }
   
   }
 

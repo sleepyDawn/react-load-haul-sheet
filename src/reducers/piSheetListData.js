@@ -8,6 +8,7 @@ const piSheetListData = {
     drillOperator: ['O1', 'O2', 'O3', 'O4', 'O5'],
     drillHelperName: ['HELPER1', 'HELPER2', 'HELPER3'],
     resourceExcavator: ['EKG_468', 'CK_723'],
+    // resourceExcavator: ['EKG_468', 'CK_723', 'EKG_473'],
     excavatorOperator: ['26231035', '26248527', '26248415', '26280867'],
     seamNo: ['6.22', '8.54', '9.44', '33.08' ],
     resourceDumper: ['60854', '60773', '60861'],

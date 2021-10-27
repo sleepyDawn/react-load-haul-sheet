@@ -1,10 +1,11 @@
 // DrillingInfos Reducer
 import { v4 as uuidv4 } from "uuid";
+import moment from "moment";
 
 const drillingInfosReducerDefaultState = [
     {   
         id: uuidv4(),
-        productionDate: '24.10.2021',
+        productionDate: moment().format("DD.MM.YYYY"),
         shift: 'SF1A',
         lineNo: 1,
         location: 'OB BENCH-1',
@@ -18,7 +19,7 @@ const drillingInfosReducerDefaultState = [
     },
     {   
         id: uuidv4(),
-        productionDate: '24.10.2021',
+        productionDate: moment().format("DD.MM.YYYY"),
         shift: 'SF1A',
         lineNo: 2,
         location: 'OB BENCH-2',

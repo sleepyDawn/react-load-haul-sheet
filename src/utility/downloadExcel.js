@@ -16,25 +16,30 @@ const downloadExcel = ({ piSheetInfos,drillingInfos,loadingInfos,loadingHaulingI
 
       // First updating location, excavatorOpertator also when exvator is being updated
       
-  // // updating resourcexcavator details according to excavator info in LoadingHauling info details
-  // const updateExcavatorDetailInLoadinHaulingList = () => {
-  //   const resourceExcavatorDetails = props.loadingInfos.map(loadingInfo => {
-  //     const {resourceExcavator, location, excavatorOperator, ...others} =loadingInfo;
+  // updating resourcexcavator details according to excavator info in LoadingHauling info details
+  const updateExcavatorDetailInLoadinHaulingList = () => {
+    const resourceExcavatorDetails = loadingInfos.map(loadingInfo => {
+      const {resourceExcavator, location, excavatorOperator, ...others} =loadingInfo;
   
-  //     return {resourceExcavator, location, excavatorOperator};
-  //   })
+      return {resourceExcavator, location, excavatorOperator};
+    })
   
-  //   console.log("checking redetails: ", resourceExcavatorDetails);
-  
-  //   const loadingHaulingInfos = props.loadingHaulingInfos
-  //   loadingHaulingInfos.forEach(loadingHaulingInfo => {
-  //     resourceExcavatorDetails.forEach(detail => {
-  //       if(detail.resourceExcavator === loadingHaulingInfo.resourceExcavator){
-  //         props.editLoadingHaulingInfo(loadingHaulingInfo.id, { location: detail.location, excavatorOperator : detail.excavatorOperator})
-  //       }
-  //     })
-  //   })
-  // }
+    console.log("checking redetails: ", resourceExcavatorDetails);
+    console.log("checking loadingHaulingInfo: ", loadingHaulingInfos);
+    const updatedLoadingHaulingInfos = loadingHaulingInfos.map(loadingHaulingInfo => {
+      let infos;
+      resourceExcavatorDetails.forEach(detail => {
+        if(detail.resourceExcavator === loadingHaulingInfo.resourceExcavator){
+          infos = { ...loadingHaulingInfo, excavatorOperator : detail.excavatorOperator, location: detail.location, };
+        }
+      })
+
+      return infos;
+    })
+    return updatedLoadingHaulingInfos;
+  }
+
+  loadingHaulingInfos = updateExcavatorDetailInLoadinHaulingList();
       
       
      
@@ -43,19 +48,19 @@ const downloadExcel = ({ piSheetInfos,drillingInfos,loadingInfos,loadingHaulingI
       
       drillingInfos = drillingInfos.map(drillingInfo => {
         const {id , ...withOutId} = drillingInfo;
-        console.log("checking rest operator: ", withOutId);
+        // console.log("checking rest operator: ", withOutId);
         return withOutId;
       })
 
       loadingInfos = loadingInfos.map(info => {
         const {id , ...withOutId} = info;
-        console.log("checking rest operator: ", withOutId);
+        // console.log("checking rest operator: ", withOutId);
         return withOutId;
       })
 
       loadingHaulingInfos = loadingHaulingInfos.map(info => {
         const {id , ...withOutId} = info;
-        console.log("checking rest operator: ", withOutId);
+        // console.log("checking rest operator: ", withOutId);
         return withOutId;
       })
       
